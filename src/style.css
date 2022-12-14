@@ -1,3 +1,93 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'M PLUS Rounded 1c', sans-serif;
+}
+
 body {
-  background-color: rebeccapurple;
+  text-align: center;
+}
+
+.title-div {
+  width: 300px;
+  display: flex;
+  justify-content: space-between;
+  margin: 20px auto;
+  border-bottom: 0.7px solid gray;
+}
+
+.title-btn {
+  border: none;
+  background: transparent;
+  font-size: 20px;
+  padding: 0;
+}
+
+.title-btn:hover {
+  color: rgb(197, 197, 24);
+  cursor: pointer;
+}
+
+#task-form {
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 20px auto;
+}
+
+#task-input {
+  padding: 10px 20px;
+}
+
+.submit-btn {
+  padding: 5px 0;
+  font-size: 18px;
+  color: white;
+  background: green;
+  border: none;
+}
+
+.task-item {
+  width: 400px;
+  display: flex;
+  justify-content: space-evenly;
+  margin: 10px auto;
+  gap: 5px;
+}
+
+ul {
+  list-style: none;
+}
+
+.style-input {
+  width: 200px;
+  border: none;
+  border-bottom: 0.3px solid gray;
+}
+
+.edit-btn {
+  padding: 4px 8px;
+  background-color: rgb(88, 79, 79);
+  border-radius: 10%;
+  border: none;
+  color: white;
+}
+
+.delete-btn {
+  padding: 4px 8px;
+  background-color: rgb(131, 9, 9);
+  border-radius: 10%;
+  border: none;
+  color: white;
+}
+
+#clear-btn {
+  border: none;
+  background-color: #fff;
+}
+
+.completed {
+  text-decoration: line-through;
 }
