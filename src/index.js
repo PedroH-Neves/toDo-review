@@ -1,14 +1,28 @@
-import _ from 'lodash';
+import showTasks from './modules/actions';
+
 import './style.css';
 
-function component() {
-  const element = document.createElement('div');
+window.addEventListener('load', () => {
+  const tasksList = JSON.parse(localStorage.getItem('tasks')) || [];
+  const taskForm = document.getElementById('task-form');
+  const resetBtn = document.getElementById('reset-btn');
 
- // Lodash, now imported by this script
-  element.innerHTML = _.join(['Hello', 'webpack'], ' ');
-  element.classList.add('hello');
+  resetBtn.addEventListener('click', () => {
+    localStorage.removeItem('tasks');
+    showTasks();
+  });
 
-  return element;
-}
-
-document.body.appendChild(component());
+  taskForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const task = {
+      description: e.target.elements.task.value,
+      completed: false,
+      index: tasksList.length + 1,
+    };
+    tasksList.push(task);
+    localStorage.setItem('tasks', JSON.stringify(tasksList));
+    e.target.reset();
+    showTasks();
+  });
+  showTasks();
+});
